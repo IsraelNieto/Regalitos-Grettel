@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regalitos Grettel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+  <div class="header-left">
+    Regalitos Grettel
+  </div>
+  <div class="header-right">
+    <img src="Logo.jpg" alt="Logo">
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#oferta" onclick="mostrarSeccion('oferta')">Productos en oferta</a></li>
+      <li><a href="#nuevos" onclick="mostrarSeccion('nuevos')">Productos nuevos</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <!-- Banner con carrusel -->
+  <section id="banner" class="activo">
+    <div class="banner-container">
+      <img id="banner-img" src="https://via.placeholder.com/900x300.png?text=Bienvenidos+a+Regalitos+Grettel" alt="Banner principal">
+    </div>
+  </section>
+
+  <main>
+    <!-- Productos en oferta -->
+    <section id="oferta" class="oculto">
+      <h2>✨ Productos en Oferta ✨</h2>
+      <div class="productos">
+        <div class="producto">
+          <img src="https://via.placeholder.com/220x180.png?text=Producto+1" alt="Producto 1">
+          <h3>Taza personalizada</h3>
+          <p class="oferta">$150</p>
+          <p class="precio">$99</p>
+          <button class="btn-agregar" onclick="agregarAlCarrito('Taza personalizada', 99)">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+          <img src="https://via.placeholder.com/220x180.png?text=Producto+2" alt="Producto 2">
+          <h3>Almohada decorativa</h3>
+          <p class="oferta">$300</p>
+          <p class="precio">$199</p>
+          <button class="btn-agregar" onclick="agregarAlCarrito('Almohada decorativa', 199)">Agregar al carrito</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Productos nuevos -->
+    <section id="nuevos" class="oculto">
+      <h2>🆕 Productos Nuevos 🆕</h2>
+      <div class="productos">
+        <div class="producto">
+          <img src="https://via.placeholder.com/220x180.png?text=Nuevo+1" alt="Nuevo 1">
+          <h3>Velas aromáticas</h3>
+          <p class="precio">$120</p>
+          <button class="btn-agregar" onclick="agregarAlCarrito('Velas aromáticas', 120)">Agregar al carrito</button>
+        </div>
+        <div class="producto">
+          <img src="https://via.placeholder.com/220x180.png?text=Nuevo+2" alt="Nuevo 2">
+          <h3>Set de libretas</h3>
+          <p class="precio">$90</p>
+          <button class="btn-agregar" onclick="agregarAlCarrito('Set de libretas', 90)">Agregar al carrito</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Ícono del carrito tipo asistente -->
+  <div id="carrito-widget" class="oculto">
+    <div class="carrito-icono" onclick="toggleCarrito()">
+      🛒 <span id="contador">0</span>
+    </div>
+    <div id="carrito-contenido" class="carrito-contenido oculto">
+      <h3>Carrito de Compras</h3>
+      <ul id="carrito"></ul>
+      <p id="total">Total: $0</p>
+      <button onclick="vaciarCarrito()">Vaciar</button>
+      <button onclick="realizarPedido()">Realizar Pedido</button>
+    </div>
+  </div>
+
+  <!-- Ticket de pedido -->
+   <div id="ticket" class="ticket oculto">
+    <h2>🧾 Ticket de Compra</h2>
+    <p id="ticket-fecha"></p>
+    <ul id="ticket-lista"></ul>
+    <p id="ticket-total"></p>
+    <button onclick="imprimirTicket()">🖨️ Imprimir Ticket</button>
+  </div>
+
+  
+
+
+  <script src="script.js"></script>
+</body>
+</html>
